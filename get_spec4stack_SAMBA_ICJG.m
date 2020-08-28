@@ -17,7 +17,7 @@ ifig = 1;    % figure index
 %============================================================================================================
 % Evaluate the SAMBA cluster
 eval(['load /Users/home/juarezilma/Master/NETWORKS/SAMBA/EGF_matlab/WORK/cluster_SAMBA.mat']);
-list_event = [9 12 25 32 60 64 144 168 318 466]
+list_event = [25 32 60 64 144 168 318 466]
 %for j=1:length(all_mname_list)
 for j=list_event;
     % Evaluate the SAMBA cluster again (?) ICJG
