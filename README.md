@@ -1,5 +1,5 @@
 # Sources_Properties_NZ
-=================================================
+==================================================
 For questions, please email at ilmadelcarmen.juarezgarfias@vuw.ac.nz (academic email) or at icjgarfias@gmail.com (personal email)
 =================================================================================================================================================================
 
@@ -8,13 +8,19 @@ In this repository you will find codes to calculate corner frequency, stress dro
 This repository has both MATLAB and Python codes. The first stage of the process is mainly Python based and all the methodology is made in MATLAB.
 
 1. The first code you need to run is called 'make_egf_clusters.m'
-   This code groups together earthquakes based on epicental distance and magnitude difference. This code provides a file called 'cluster_NETWORK_NAME.mat'. This      file includes a list of earthquakes (with all the info about them, i.e. location, time, magnitude, depth) and within each earthquake a list of possible            associated (co-located) earthquakes.
+   This code groups together earthquakes based on epicental distance and magnitude difference. You can modify the epicentral and magnitude criteria as preference.    This code provides a file called 'cluster_NETWORK_NAME.mat'. This file includes a list of earthquakes (with all the info about them, i.e. location, time,          magnitude, depth) and within each earthquake a list of possible associated (co-located) earthquakes.
 
    To run this code, you will need a catalogue of earthquakes in a .MAT (MATLAB) file. Nowadays, catalogues are in .XML files, so if you have a .XML catalogue        file, the code name 'cat_to_EGF_eqinfo.py' will provide you with a .CSV catalogue file and then you will have to import the .CSV catalogue file in MATLAB to        create a .MAT file. 
    
-   If you have your catalogue in a .XML file follow the next steps before running the 'make_egf_clusters.m' MATLAB code. If you do not have your catalogue in a        .XML file, there is a file example in this repository ('eqinfo.mat') to give you an idea of the file you need to have to run the 'make_egf_clusters.m' MATLAB      code.
+   If you have your catalogue in a .XML file follow the next steps before running the 'make_egf_clusters.m' MATLAB code. If you do not have your catalogue in a        .XML file, there is a file example in this repository ('eqinfo_ND.mat') to give you an idea of the file you need to have to run the 'make_egf_clusters.m' MATLAB    code.
    
    1.1. Before running the 'make_egf_clusters.m' MATLAB code, run the 'cat_to_EGF_eqinfo.py'
+        This code will generate a .CSV file called 'eqinfo.csv'
+   1.2. Import the 'eqinfo.csv' file into MATLAB and make a new 'eqinfo.mat' file. 
+   1.3. Finally run the 'make_egf_clusters.m' MATLAB code - This code may take a while to run, everything depends of how many earthquakes are in your catalogue.
+   1.4. After running the 'make_egf_clusters.m' MATLAB code do NOT clear the workspace, you need to manually save the next variables in a .MAT file called            'cluster_NETWORKNAME.mat':
+               - All cat_ev* structures
+               - all_mname_list
  
 
 2. dfdf
