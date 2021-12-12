@@ -10,9 +10,9 @@ This repository has both MATLAB and Python codes. The first stage of the process
 1. The first code you need to run is called 'make_egf_clusters.m'
    This code groups together earthquakes based on epicental distance and magnitude difference. You can modify the epicentral and magnitude criteria as preference.    This code provides a file called 'cluster_NETWORK_NAME.mat'. This file includes a list of earthquakes (with all the info about them, i.e. location, time,          magnitude, depth) and within each earthquake a list of possible associated (co-located) earthquakes.
 
-   To run this code, you will need a catalogue of earthquakes in a .MAT (MATLAB) file. Nowadays, catalogues are in .XML files, so if you have a .XML catalogue        file, the code name 'cat_to_EGF_eqinfo.py' will provide you with a .CSV catalogue file and then you will have to import the .CSV catalogue file in MATLAB to        create a .MAT file. 
+   To run this code, you will need a catalogue of earthquakes in a .MAT (MATLAB) file. Nowadays, catalogues are in .XML files, so if you have a .XML catalogue        file, the code named 'cat_to_EGF_eqinfo.py' will provide you with a .CSV catalogue file and then you will have to import the .CSV catalogue file in MATLAB to        create a .MAT file. 
    
-   If you have your catalogue in a .XML file follow the next steps before running the 'make_egf_clusters.m' MATLAB code. If you do not have your catalogue in a        .XML file, there is a file example in this repository ('eqinfo_ND.mat') to give you an idea of the file you need to have to run the 'make_egf_clusters.m' MATLAB    code.
+   If you have your catalogue in a .XML file follow the next steps before running the 'make_egf_clusters.m' MATLAB code. If you do not have your catalogue in a        .XML file, there is a file example in this repository ('eqinfo_ND.mat') that will give you an idea of the file you need to have to run the         'make_egf_clusters.m' MATLAB code.
    
    1.1. Before running the 'make_egf_clusters.m' MATLAB code, run the 'cat_to_EGF_eqinfo.py'
         This code will generate a .CSV file called 'eqinfo.csv'
@@ -21,10 +21,11 @@ This repository has both MATLAB and Python codes. The first stage of the process
    1.4. After running the 'make_egf_clusters.m' MATLAB code do NOT clear the workspace, you need to manually save the next variables in a .MAT file called            'cluster_NETWORKNAME.mat':
                - All cat_ev* structures
                - all_mname_list
- 
-
-2. dfdf
+2. SAC files 
 3. 
+4. dfdf
+5. Run EGF_decon.m:  If the EGF_decon.m presents a error saying that there are no picks, run the del_traces_nopicks.m code. this will delete the traces that not contains picks. We need P and S picks for all the traces.  
+
 
 3. Hola
 4. hola
