@@ -46,10 +46,9 @@ There are three examples files in this repository:
 	Line 29-30: Make sure that the station and channel names  are being read correctly. 
 	Line 8: Variable i represents the event the code is reading. You can choose between a list of events or and individual event. 
 	
-  3.2.The outputs of this codes are MAT file for each EGF event. This MAT fiiles includes all the SAC information per event (picks, time, magnitude, etc). 
+  3.2.The outputs of this codes are MAT file for each EGF event. This MAT files includes all the SAC information per event (picks, time, magnitude, etc). 
 
-    9. Run convert_data_FIORD.m This then converts the data structures into the event files with al the data of EGFs combined for the mainshock event. 
-        a. Edits: Need to change project name throughout. Also event number (m=4)
+    
 
 
 
