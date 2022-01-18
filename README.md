@@ -28,18 +28,31 @@ There are three examples files in this repository:
 
 2. Run 'load_sac.m' in MATLAB
    Once you had all the sac files, it's time for the data procesing in MATLAB.
+   The first code will read the SAC data and transformed to the specific format the MATLAB procesing need.
    
-    • Edits: The cluster and eqinfo path on lines 7-8. For the code to loop over all the Target events choose a list of target events in the for loop in line 13. If you want to run this of a single event, specify that on that for loop. 
-      
-    • Outputs: Loads in matrices of XX_SSSS_C_evYYYYMMDDHHMMSS_PROJECT (where XX = Network code SSSS = station and C = channel, ND_GLORX_E_ev20180512145612_ND). You can check the data are loaded correctly by plotting columns 1 & 2 of one of those matrices. Should display a waveform.  These are then combined and saved as ND_jev20180512145612_data.mat.
+   2.1. Before running, need to edit some lines in the code.
+   	Line 9-10 & 16-17: Edit the path for the cluster and eqinfo files.
+	Line 13: Variable m represents the event the code is reading. You can choose between a list of events or and individual event. 
+	Line 19: Change the path of folder you will save the data.
+	Line 43: Write a general 'key' that all your file names share.
+  2.2. The output of this codes is a file called 'SD_j20190501033509_data.mat' (where SD = Network code). This file contains matrices that corresponds to every    	  individual SAC file. Those files are named as XX_SSSS_C_evYYYYMMDDHHMMSS_PROJECT (where XX = Network code SSSS = station and C = channel, 		            ND_GLORX_E_ev20180512145612_ND). 
+  
+3. Run the ‘convert_data.m’ code
+    • Edits:  The cluster and eqinfo path on lines 7 & 8. Make sure that the station and channel names  are being read correctly. 
+
+    • Outputs: This code creates a MAT file for each EGF event. This MAT fiiles includes all the SAC information per event (picks, time, magnitude, etc). 
+
+    9. Run convert_data_FIORD.m This then converts the data structures into the event files with al the data of EGFs combined for the mainshock event. 
+        a. Edits: Need to change project name throughout. Also event number (m=4)
 
 
 
-	
 
 
 
-3.
+
+
+
 4. 
 5. dfdf
 6. Run EGF_decon.m:  If the EGF_decon.m presents a error saying that there are no picks, run the del_traces_nopicks.m code. this will delete the traces that not contains picks. We need P and S picks for all the traces.  
