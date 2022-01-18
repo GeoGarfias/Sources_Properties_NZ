@@ -40,13 +40,9 @@ There are three examples files in this repository:
 3. Run the ‘convert_data.m’ code
 		
   3.1. The edits you need to make on the code are:
-  	Line 
-
-
-
-
-
-    • Edits:  The cluster and eqinfo path on lines 7 & 8. Make sure that the station and channel names  are being read correctly. 
+  	Line 4-5 & 9-10: Edit the path for the cluster and eqinfo files.
+	Line 13: Change the path of folder you will save the data.
+	Line 29-30: Make sure that the station and channel names  are being read correctly. 
 
     • Outputs: This code creates a MAT file for each EGF event. This MAT fiiles includes all the SAC information per event (picks, time, magnitude, etc). 
 
