@@ -22,32 +22,20 @@ This repository has both MATLAB and Python codes. The first stage of the process
                - All cat_ev* structures &
                - all_mname_list
 
-Once you have the cluster file, you need to get individual station component SAC files for all your main-events. (I’m not sure why, but I decided to get NORDIC files first and then SAC files, the procedure to get the SAC files is explained ahead)
+Once you have the cluster file, you need to get individual station component SAC files for all the earthquakes. 
+There are three examples files in this repository:
+	1. XX_THOMX_Z_ev202001260401.sac_cut     2. XX_THOMX_N_ev202001260401.sac_cut     3. XX_THOMX_E_ev202001260401.sac_cut
 
-2. Getting SAC files.
-   (I’m not sure why, but I decided to get NORDIC files first and then SAC files, that procedure is explained here)
-   2.1. Run the python code 'Getnordic_EGF.py'
+2. Run 'load_sac.m' in MATLAB
+   Once you had all the sac files, it's time for the data procesing in MATLAB.
+   
+    • Edits: The cluster and eqinfo path on lines 7-8. For the code to loop over all the Target events choose a list of target events in the for loop in line 13. If you want to run this of a single event, specify that on that for loop. 
+      
+    • Outputs: Loads in matrices of XX_SSSS_C_evYYYYMMDDHHMMSS_PROJECT (where XX = Network code SSSS = station and C = channel, ND_GLORX_E_ev20180512145612_ND). You can check the data are loaded correctly by plotting columns 1 & 2 of one of those matrices. Should display a waveform.  These are then combined and saved as ND_jev20180512145612_data.mat.
 
 
 
-
-	a) Neet to run the python code call ‘Getnordic_EGF.py’.
-	    This code was made to get data from VUW servers. 
-    • Edits: Paths for .XML and  eqinfo.mat' files and id_list variable. 
-              The id_list variable is the path of a directory that includes .CSV files for each MAIN event. The .CSV files only contain the *ID of the EGFs event asocciated to a MAIN event. 
-		       		*You can find the ID of the events in the cluster_NETWORKNAME.mat file. 			              There is a  code name ‘get_idfiles.m’ that get the ID of the EGF events 					associated with a MAIN event and write the .CVS files for each MAIN event.
-
-				You also need to edit the paths  of where the nordic files are  			           going to be saved in the def_nordic function are going to be 					saved.  There should be a directory for each MAIN event and 				subdirectories within them called ‘S_files’ and ‘Wav_files’. The 				output of the code is storage in those subdirectories. There 					is .csh code call ‘make_dir.csh’ that will make the directories for 				you.
-
-    • Output: SEISAN files, s-files and wav-files for all MAIN and EGF events.		
-	After getting all the SEISAN files, it is time to get the SAC files.
-
-	b) Run the python code call ‘cat_to_EGF_sacfiles.py’
-	This code will generate SAC traces per component per each single event. 
-    • Edits: Only need to edit the paths. 
-					
-    • Output: Individual component stations SAC traces. 
-      (Networkcode_station_component_eventname.sac_cut - AF_EOROX_Z_ev20180512145612.sac_cut)
+	
 
 
 
