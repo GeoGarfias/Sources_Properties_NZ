@@ -38,6 +38,14 @@ There are three examples files in this repository:
   2.2. The output of this codes is a file called 'SD_j20190501033509_data.mat' (where SD = Network code). This file contains matrices that corresponds to every    	  individual SAC file. Those files are named as XX_SSSS_C_evYYYYMMDDHHMMSS_PROJECT (where XX = Network code SSSS = station and C = channel, 		            ND_GLORX_E_ev20180512145612_ND). 
   
 3. Run the ‘convert_data.m’ code
+		
+  3.1. The edits you need to make on the code are:
+  	Line 
+
+
+
+
+
     • Edits:  The cluster and eqinfo path on lines 7 & 8. Make sure that the station and channel names  are being read correctly. 
 
     • Outputs: This code creates a MAT file for each EGF event. This MAT fiiles includes all the SAC information per event (picks, time, magnitude, etc). 
