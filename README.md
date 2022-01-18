@@ -38,13 +38,15 @@ There are three examples files in this repository:
   2.2. The output of this codes is a file called 'SD_j20190501033509_data.mat' (where SD = Network code). This file contains matrices that corresponds to every    	  individual SAC file. Those files are named as XX_SSSS_C_evYYYYMMDDHHMMSS_PROJECT (where XX = Network code SSSS = station and C = channel, 		            ND_GLORX_E_ev20180512145612_ND). 
   
 3. Run the ‘convert_data.m’ code
+   This converts the data structures into the event files with al the data of EGFs combined for the main-event. 
 		
   3.1. The edits you need to make on the code are:
   	Line 4-5 & 9-10: Edit the path for the cluster and eqinfo files.
 	Line 13: Change the path of folder you will save the data.
 	Line 29-30: Make sure that the station and channel names  are being read correctly. 
-
-    • Outputs: This code creates a MAT file for each EGF event. This MAT fiiles includes all the SAC information per event (picks, time, magnitude, etc). 
+	Line 8: Variable i represents the event the code is reading. You can choose between a list of events or and individual event. 
+	
+  3.2.The outputs of this codes are MAT file for each EGF event. This MAT fiiles includes all the SAC information per event (picks, time, magnitude, etc). 
 
     9. Run convert_data_FIORD.m This then converts the data structures into the event files with al the data of EGFs combined for the mainshock event. 
         a. Edits: Need to change project name throughout. Also event number (m=4)
