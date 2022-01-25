@@ -62,7 +62,15 @@ There are three examples files in this repository:
 	
    4.2. The outputS of this code are two MAT file called mname_evYYYYMMDDHHMMSS_nsec_1_egf.mat and                	         mname_evYYYYMMDDHHMMSS_data.mat  There's an example file in this repository:                                             'mname_ev20190424053250_nsec1.28_1_egf.mat' and 'mname_ev20190424053250_data.mat'
 
-5.
+5. Run the code 'get_spec4stack.m'
+   This code calculates the signal spectra and the noise spectra of both the main and EGF events. Then, combines            everything you need for stacking.
+   
+   
+   It is where you can make sure you have the azimuth of all stations, distances to all EGFs etc. 
+        a. Edits: As usual, check the project name and the event id number throughout. 
+        b. Outputs: _MT files and nsec#_2 files (not 1) as second phase of stacking. 
+
+
 
 
 
