@@ -49,35 +49,21 @@ There are three examples files in this repository:
   3.2.The outputs of this codes are MAT file for each EGF event. This MAT files includes all the SAC information per event (picks, time, magnitude, etc). 
 
 4. Run the 'EGF_decon.m' code
-   This reads in the cluster file and then the data file written out in the previous step  and performs a deconvolution between main-events and EGFs-events. It’s    quite slow! Tries all pairings of data and only accepts the ones with cross-correlation value bigger than 0.5.
+   This reads in the cluster file and then the data file written out in the previous step  and performs a deconvolution between main-events and EGFs-events. It’s QUITE SLOW! Tries all pairings of data and only accepts the ones with cross-correlation value bigger than 0.5.
    
    4.1. The edits you need to make on the code are:
    	Lines 60,64: Edit the path for the cluster.
-	Line 62-63: Variable j represents the event the code is reading. You can choose between a list of events or and           individual event. 
+	Line 62-63: Variable j represents the main-event the code is reading. You can choose between a list of events or         and individual event. Main event is always a loop over j and is sgmj. EGF is always loop over l and is sgml. 
 	Line 69: Change the path of folder you will save the data.
 	Line 88: Choose a cross-correlation limit - 0.5 is suggested.
-	Line 90-91: Set an approximate value for vp and vs.
+	Lines 90-91: Set an approximate value for vp and vs.
+	Lines 120-123: Set the values for the filters. 
+	Lines 465-507: Uncomment those lines if you want to get plots from the deconvolution proces. 
 	
-	
+   4.2. The outputS of this code are two MAT file called mname_evYYYYMMDDHHMMSS_nsec_1_egf.mat and                	         mname_evYYYYMMDDHHMMSS_data.mat  There's an example file in this repository:                                             'mname_ev20190424053250_nsec1.28_1_egf.mat' and 'mname_ev20190424053250_data.mat'
 
+5.
 
-
-   6.2
-   7.3
-   8.4
-   9.
-        a. Edits: Need to change project name throughout (find and replace FIORD=YOURPROJECT NAME). Also rename and save script in codes/project. 
-        b. Nsec (see lines 149-157 and lines 198-204) is a key variable that defines the window length as a function of magnitude. You might have to play around with this to check it’s right, as it uses the given local magnitude (ML) to then convert to Mw and Mo to estimate the event duration based on empirical scaling. It is currently set to use the NZ scaling relationship (From Ristau 2014?). It should not be longer than the S-P time at the closest station. Try it with the current settings (which I set for Fiordland) and check the output. It may need shortening, because local stations will be closer for your study probably. 
-        c. f1 and f3 define the bandpass filters for the deconvolution. This currently set to be magnitude dependent and calculated using nsec (around lines 207-229). You can check if this is appropriate in the plots made later in stack_spec_XXX below. If you can see long period signals are present on sites with low signal to noise, then you might need to play around with this.  Having a well defined magnitude scale is likely to help this. 
-        d. Variable naming: main event is always a loop over j and is sgmj etc. Currently set to run for 1 event only (e.g. j-=4). Can loop over j to run for multiple mainshocks (e.g. line 77) .  EGF is always loop over l and is sgml etc. k usually loops over the stations and channels. The kk option is to do the deconvolution with the input picks. 
-        e. If it gives output up to nsec=???? and then looks like it has finished quickly, it’s because the files have already been generated. The code includes a time-saving check to see if the expected output files (/work/PROJECT/mname_evYYYYMMDDHHMMSS_nsec_1_egf.mat) already exist. If it does, it will break. If you have changed something in the code, and want to re-run, the you’ll have to delete/rename the original output files to rerun. Or remove that checking flag. 
-        f. Outputs: (/work/PROJECT/mname_evYYYYMMDDHHMMSS_nsec_1_egf.mat
-
-
-
-
-6. dfdf
-7. Run EGF_decon.m:  If the EGF_decon.m presents a error saying that there are no picks, run the del_traces_nopicks.m code. this will delete the traces that not contains picks. We need P and S picks for all the traces.  
 
 
 3. Hola
