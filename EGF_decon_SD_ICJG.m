@@ -92,7 +92,8 @@ for j= 51
     %_______________________________________________________________________________________________________________
     [mlen2 mlen1]=size(cluster.id)
     
-    % If want to know how to calculate the nsec value, check the function
+    % If want to know how to calculate the nsec value, check the function.
+    % The nsec function calculates the time window. A very import parameter for the stress drops calculation 
     % The cluster.mag is the mw magnitude calculate in the make_cluster
     % code
     nsec = nsec_value(cluster.mw(1))
