@@ -1,7 +1,6 @@
 # Sources_Properties_NZ
-==================================================
 For questions, please email at ilmadelcarmen.juarezgarfias@vuw.ac.nz (academic email) or at icjgarfias@gmail.com (personal email)
-=================================================================================================================================================================
+__________________________________________________________________________________________________________________________________________________
 
 In this repository you will find codes to calculate corner frequency, stress drop and directivity following Abercrombie, R. E., Bannister, S., Ristau, J., and Doser, D. 2017 (https://doi.org/10.1093/gji/ggw393) and Abercrombie, R. E., Poli, P., and Bannister, S. 2017 (https://doi.org/10.1002/2017JB014935).
 
@@ -71,12 +70,6 @@ There are three examples files in this repository:
         b. Outputs: _MT files and nsec#_2 files (not 1) as second phase of stacking. 
 
 
-
-
-
-3. Hola
-4. hola
-5. 
 NOTES:
 1. All codes and file names are between quotes (' ') - example: 'make_egf_clusters.m' and 'eqinfo.mat'
 2. File extension names are written with capital letters only to highlight them. Extension should be written in lower case for files. 
